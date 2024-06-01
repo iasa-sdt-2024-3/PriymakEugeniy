@@ -1,0 +1,64 @@
+Feature: EPAM website main functionalities
+
+  Background:
+    Given I open the EPAM homepage
+
+  Scenario: Navigate to Careers
+    Given I am on the EPAM homepage
+    When I click on the "Careers" link
+    Then I should be taken to the Careers page
+
+  Scenario: Search for jobs
+    Given I am on the Careers page
+    When I enter "Software Engineer" into the search bar
+    And I click the "Search" button
+    Then I should see a list of job postings related to "Software Engineer"
+
+  Scenario: Navigate to Insights
+    Given I am on the EPAM homepage
+    When I click on the "Insights" link
+    Then I should be taken to the Insights page
+
+  Scenario: Subscribe to newsletter
+    Given I am on the EPAM homepage
+    When I scroll to the footer
+    And I enter "test@example.com" into the newsletter subscription field
+    And I click the "Subscribe" button
+    Then I should see a confirmation message
+
+  Scenario: Navigate to About page
+    Given I am on the EPAM homepage
+    When I click on the "About" link
+    Then I should be taken to the About page
+
+  Scenario: Check company blog
+    Given I am on the EPAM homepage
+    When I click on the "Blog" link
+    Then I should be taken to the Blog page
+    And I should see the latest blog post
+
+  Scenario: Contact EPAM
+    Given I am on the EPAM homepage
+    When I click on the "Contact" link
+    Then I should be taken to the Contact page
+    And I should see the contact form
+
+  Scenario: Explore services
+    Given I am on the EPAM homepage
+    When I click on the "Services" link
+    Then I should be taken to the Services page
+    And I should see a list of services provided by EPAM
+
+  Examples:
+    | link_text             | expected_page       |
+    | "Careers"             | "Careers page"      |
+    | "Insights"            | "Insights page"     |
+    | "About"               | "About page"        |
+    | "Blog"                | "Blog page"         |
+    | "Contact"             | "Contact page"      |
+    | "Services"            | "Services page"     |
+
+  Scenario Outline: Navigate to various sections
+    Given I am on the EPAM homepage
+    When I click on the "<link_text>" link
+    Then I should be taken to the <expected_page>

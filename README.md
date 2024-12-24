@@ -65,7 +65,8 @@ Before running the project, ensure you have Python (version 3.11 or higher) and 
 - On Windows: Use the official Python installer from ***python.org***.
 
 ### Running the Program
-- **Scan Ports**: Launch `open_port_scanner.py` to find an available port (default is 127.0.0.1 for demonstration). Specify a custom IP and port range if needed.
+- **Scan Ports**: Launch `open_port_scanner.py` to find an available port for given IP address
+  (default IP is 127.0.0.1 for demonstration). Specify a custom IP and port range if needed.
 
 Example output: 
 
